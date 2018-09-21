@@ -11,12 +11,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { AMainComponent } from './a-main/a-main.component';
 import { AboutComponent } from './about/about.component';
 import {HeaderComponent } from './header/header.component';
+import {SigninComponent} from './signin/signin.component';
 const routes: Routes = [
 
   // { path: '', component: ArifMainComponent },
   { path: '', component: AMainComponent },
   { path: 'about', component: AboutComponent },
-  { path :'' , component:HeaderComponent  }
+  { path :'' , component:HeaderComponent  },
+  {path:'signin',component:SigninComponent}
 ];
 
 @NgModule({

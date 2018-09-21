@@ -1,0 +1,200 @@
+
+ <!-- ng-style="{'background-image': 'url(' + bgUrl + ')'}" -->
+
+
+ <div class="background">
+
+  <div class="card">
+
+    <mat-card class="signin-card">
+
+          <mat-card-content>
+
+            <mat-tab-group class="sign-tab-group">
+
+
+
+
+              <mat-tab label="sign in">
+                <div class="form">
+                  <div class="inner-form">
+
+
+                    <mat-form-field class="form-element">
+                      <input matInput  [(ngModel)]="user.email"  placeholder="Email" type="email" [formControl]="emailFormControl">
+                      <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                        Please enter a valid email address
+                      </mat-error>
+                      <mat-error *ngIf="emailFormControl.hasError('required')">
+                        Email is <strong>required</strong>
+                      </mat-error>
+                    </mat-form-field>
+
+
+
+                    <mat-form-field class="form-element">
+                      <input  matInput type="password" [(ngModel)]="password" placeholder="Password" type="password" [formControl]="passwordFormControl">
+                      <mat-error *ngIf="passwordFormControl.hasError('password') && !passwordFormControl.hasError('required')">
+                        Please enter a valid password
+                      </mat-error>
+                      <mat-error *ngIf="passwordFormControl.hasError('required')">
+                        Password is <strong>required</strong>
+                      </mat-error>
+                    </mat-form-field>
+
+
+
+                    <button class="centered-horizontal" mat-raised-button color="accent" (click)="signin()"  *ngIf="!loading">Sign In</button>
+                    <mat-spinner class="centered-horizontal"  diameter="30" *ngIf="loading"></mat-spinner>
+
+                    <table class="table-signin-providers"><tr>
+                    <td (click)="signinGoogle()">Sign in with Google</td>
+                      <td (click)="signinGoogle()">Sign in with Facebook</td>
+                    </tr></table>
+
+
+                  </div>
+
+                </div>
+              </mat-tab>
+
+
+
+
+
+              <mat-tab label="sign up">
+                <div class="form">
+                  <div class="inner-form">
+
+                    <mat-form-field class="form-element">
+                      <input matInput [(ngModel)]="user.displayName" type="text" placeholder="Name">
+                    </mat-form-field>
+
+
+
+                    <mat-form-field class="form-element">
+                      <input matInput  [(ngModel)]="user.email"  placeholder="Email" type="email" [formControl]="emailFormControl">
+                      <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                        Please enter a valid email address
+                      </mat-error>
+                      <mat-error *ngIf="emailFormControl.hasError('required')">
+                        Email is <strong>required</strong>
+                      </mat-error>
+                    </mat-form-field>
+
+
+
+
+                    <mat-form-field class="form-element">
+                      <input  matInput type="password" [(ngModel)]="password" placeholder="Password" type="password" [formControl]="passwordFormControl">
+                      <mat-error *ngIf="passwordFormControl.hasError('password') && !passwordFormControl.hasError('required')">
+                        Please enter a valid password
+                      </mat-error>
+                      <mat-error *ngIf="passwordFormControl.hasError('required')">
+                        Password is <strong>required</strong>
+                      </mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field class="form-element">
+                      <input  matInput type="password" [(ngModel)]="confirmPassword" placeholder="confirm Password" [formControl]="confirmPasswordFormControl">
+                      <mat-error *ngIf="confirmPasswordFormControl.hasError('password') && !confirmPasswordFormControl.hasError('required')">
+                        *
+                      </mat-error>
+                      <mat-error *ngIf="confirmPasswordFormControl.hasError('required')">
+                        Password is <strong>required</strong>
+                      </mat-error>
+                    </mat-form-field>
+
+
+
+                    <button  class="centered-horizontal"  mat-raised-button color="accent" (click)="signup()" *ngIf="!loading">Sign Up</button>
+                    <mat-spinner class="centered-horizontal"   diameter="30"  *ngIf="loading"></mat-spinner>
+
+                  </div>
+
+
+                </div>
+              </mat-tab>
+            </mat-tab-group>
+          </mat-card-content>
+
+
+
+    </mat-card>
+
+  </div>
+
+  <div class="info"></div>
+
+
+<div>
+
+<!--
+<div class="signclass">
+
+
+
+<mat-card class="signin-card">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>Shiba Inu</mat-card-title>
+    <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+  </mat-card-header>
+
+<mat-tab-group class="sign-tab-group">
+<mat-tab label="sign in">
+
+  <mat-card-content>
+    <div class="example-container">
+  <mat-form-field>
+    <input matInput placeholder="Username/Email">
+  </mat-form-field>
+
+  <mat-form-field>
+    <textarea matInput placeholder="Password"></textarea>
+  </mat-form-field>
+
+
+</div>
+  </mat-card-content>
+
+
+  <mat-card-actions>
+    <button mat-button>enter</button>
+
+  </mat-card-actions>
+</mat-tab>
+
+
+<mat-tab label ="sign up">
+
+    <mat-card-content>
+      <div class="example-container">
+    <mat-form-field>
+      <input matInput placeholder=" Select Username*">
+    </mat-form-field>
+
+    <mat-form-field>
+      <textarea matInput placeholder="Email*"></textarea>
+    </mat-form-field>
+    <mat-form-field>
+      <textarea matInput placeholder="Password*"></textarea>
+    </mat-form-field>
+
+    <mat-form-field>
+      <textarea matInput placeholder="Confirm Password*"></textarea>
+    </mat-form-field>
+
+  </div>
+    </mat-card-content>
+
+
+    <mat-card-actions>
+
+    </mat-card-actions>
+
+</mat-tab>
+
+</mat-tab-group>
+</mat-card>
+</div> -->

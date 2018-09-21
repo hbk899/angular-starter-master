@@ -21,7 +21,9 @@ import { AboutComponent } from './about/about.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
 import { HeaderComponent } from './header/header.component';
 import { ArticleNewComponent } from './article-new/article-new.component';
-
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { SigninComponent } from './signin/signin.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import { ArticleNewComponent } from './article-new/article-new.component';
     AboutComponent,
     SideBarComponent,
     HeaderComponent,
-    ArticleNewComponent
+    ArticleNewComponent,
+    SigninComponent
   ],
   imports: [
     AppRoutingModule,
@@ -38,11 +41,15 @@ import { ArticleNewComponent } from './article-new/article-new.component';
     BrowserAnimationsModule,
     DemoMaterialModule,
     AngularFireModule.initializeApp(environment.firebase, 'tobechangedfornotifications'),
+    AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
     AngularFirestoreModule.enablePersistence(), // imports firebase/firestore, only needed for database features
     MarkdownModule.forRoot(),
     CovalentTextEditorModule,
+    FormsModule
+
   ],
   providers: [MainService],
+  
   bootstrap: [AppComponent]
 })
 export class AppModule { }

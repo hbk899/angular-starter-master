@@ -19,12 +19,12 @@
 
 
           </div>
-          <mat-card-title>{{}}<br>by <a routerLink="">{{}}</a></mat-card-title>
+          <mat-card-title><markdown [data]="article.title"></markdown><br>by <markdown [data]="article.author"></markdown></mat-card-title>
         </mat-card-header>
         <mat-card-content>
-            <markdown ngPreserveWhitespaces>{{task.description}}</markdown>
+            <markdown ngPreserveWhitespaces>{{artcle.description}}</markdown>
             <div class="more-text" >
-              <a routerLink="">View details ></a>
+              <a routerLink="/task/{{task.id}}">View details ></a>
 
             </div>
 
@@ -48,7 +48,7 @@
 
   </div>
 
-  <app-sidebar class="col-for-sides  only-desktop"></app-sidebar>
+ 
 
 
 

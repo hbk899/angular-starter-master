@@ -74,7 +74,7 @@ export class AuthService {
         }
 
       }),
-      startWith(JSON.parse(localStorage.getItem('currentUser')) ? JSON.parse(localStorage.getItem('currentUser')) : new RxUser)
+      startWith(JSON.parse(localStorage.getItem('currentUser')) ? JSON.parse(localStorage.getItem('currentUser')) : new PlantifyUser)
     );
   }
 
@@ -82,14 +82,14 @@ export class AuthService {
 
   ////// OAuth Methods /////
   googleLogin() {
-    const provider = new firebase.auth.GoogleAuthProvider();
+    const provider = new firebase2.auth.GoogleAuthProvider();
     return this.oAuthLogin(provider);
   }
 
 
 
   facebookLogin() {
-    const provider = new firebase.auth.FacebookAuthProvider();
+    const provider = new firebase2.auth.FacebookAuthProvider();
     return this.oAuthLogin(provider);
   }
 
@@ -147,7 +147,7 @@ export class AuthService {
 
   // Sends email allowing user to reset password
   resetPassword(email: string) {
-    const fbAuth = firebase.auth();
+    const fbAuth = firebase2.auth();
 
     return fbAuth
       .sendPasswordResetEmail(email)
