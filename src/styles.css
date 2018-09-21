@@ -1,0 +1,294 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+
+
+@charset "utf-8";
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web');
+
+
+/* @import url("../node_modules/@angular/material/prebuilt-themes/purple-green.css"); */
+
+/* @import 'style-custom-theme.scss'; */
+
+
+
+
+/* ******* step 2: box sizing */
+
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* ******* step 3: box sizing */
+
+/* For mobile phones: */
+
+[class*='col-'] {
+	width: 100%;
+  float: left;
+
+}
+body {
+	background-color: #e9e9e9;
+  }
+.separator{
+    height: 3px;
+    background-color: rgb(119, 228, 177);
+    
+    width: 100%;
+   
+    }
+.only-desktop{
+	display: none;
+}
+
+.only-mobile{
+	display: block;
+}
+
+
+.col-50p {width: 50%;}
+
+@media only screen and (min-width: 600px) {
+	/* For tablets: */
+
+
+	
+	.col-25p {width: 25%;}
+	.col-75p {width: 75%;}
+	
+	.col-50p {width: 50%;}
+
+
+
+	.col-m-4 {width: 25%;}
+	.col-m-3 {width: 33.33333%;}
+	.col-m-2 {width: 50%;}
+
+
+
+	[class*="header-"] {
+		padding: none;
+	}
+	.only-desktop{
+		display: none;
+	}
+	.only-mobile{
+		display: block;
+	}
+}
+@media only screen and (min-width: 1200px) {
+	/* For desktop: */
+	.col-5p {width: 5%;}
+	.col-10p {width: 10%;}
+	.col-15p {width: 15%;}
+	.col-25p {width: 25%;}
+	.col-50p {width: 50%;}
+	.col-75p {width: 75%;}
+	.col-for-sides {
+		width: 10%;
+	}
+	.col-4 {width: 25%;}
+	.col-3 {width: 33.33333%;}
+	.col-2 {width: 50%;}
+	.col-for-page {
+		width: 65%;
+		max-width: 800px;
+
+	}
+	[class*="col-"] {
+		min-height: 20px;
+	}
+
+	.only-desktop{
+		display: block;
+	}
+	.only-mobile{
+		display: none;
+	}
+
+}
+
+
+
+/* ******* step 5: clear both */
+.row::after {
+	content: "";
+	clear: both;
+	display: block;
+}
+
+.padding-responsive{
+	padding: 10px 2%;
+}
+
+
+.clear{
+  clear: both;
+}
+
+.more-text{
+  text-align: right;
+  width:100%;
+}
+
+body {
+	font: 15px/24px Nunito, Arial, sans-serif;
+	color: black;
+	margin: 0px;
+	/* background: #CED7E6; */
+	word-wrap: break-word;
+}
+
+
+h1 {
+  color: #333;
+  font-family: Nunito, Arial, sans-serif;
+  font-size: 150%;
+}
+h2, h3 {
+  color: #444;
+  font-family: Nunito, Arial, sans-serif;
+  font-weight: lighter;
+}
+
+
+
+
+
+
+
+
+a{
+  text-decoration: none;
+  color: #006064;
+}
+
+
+a:hover {
+  color: #00363a;
+  text-decoration: underline;
+}
+nav *.active {
+  color: #039be5;
+}
+
+
+
+
+
+.button-row {
+
+	
+	margin: 10px 0px;
+	text-align: right
+}
+.button-row  *{
+
+	display: inline;
+}
+
+
+.list-item-wrapper{
+  padding: 10px 10px;
+}
+	
+
+
+
+
+.center {
+    margin: auto;
+}
+
+.centered-horizontal {
+    display: table;
+    margin: 0 auto;
+}
+
+
+.maxWidthGlobal{
+	max-width: 1000px;
+}
+.padding-global{
+	padding: 5px;
+}
+.margin-global{
+	margin: 5px;
+}
+
+.multi-lines-text { white-space: pre-line; }
+
+
+
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+
+.inputfile-3 + label {
+	color: #1876c4;
+}
+
+.inputfile-3:focus + label,
+.inputfile-3.has-focus + label,
+.inputfile-3 + label:hover {
+	/* color: #1876c4; */
+}
+
+
+.inputfile + label {
+	cursor: pointer; /* "hand" cursor */
+}
+
+
+.only-print{
+	visibility: hidden;
+}
+
+.allow-print{
+	visibility: visible;
+}
+
+@media  print{
+	
+
+	.only-print{
+		visibility: visible;
+	}
+
+
+	
+	.allow-print{
+		visibility: visible;;
+	}
+	.only-print{
+		visibility: visible;
+	}
+
+	
+	
+ }
+
+/* everywhere else */
+* {
+  font-family: Titillium Web, Arial, sans-serif;
+}
+
+
+
+
+/*
+Copyright 2017-2018 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/

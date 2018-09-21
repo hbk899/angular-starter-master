@@ -1,0 +1,45 @@
+.title{
+font-size: 4ch;
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+padding: 15px;
+margin: 20% 20% ;
+box-sizing: border-box;
+align-self: center;
+align-self: auto;
+align-content: center
+}
+.example-card {
+    max-width: 400px;
+    align-self: center;
+    margin: 0% 30%;
+  }
+  
+  .example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+  }
+  list-item-wrapper{
+    padding: 10px 10px;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  @media (max-width: 600px) {
+    .module {
+      font-size: 10px;
+      max-height: 75px; }
+  }
+  @media (max-width: 1024px) {
+    .grid {
+      margin: 0;
+    }
+    .module {
+      min-width: 60px;
+    }
+  }

@@ -1,0 +1,51 @@
+.menu{
+    max-width: 250px;
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  
+  nav a,p{
+    width: 100%;
+    text-decoration: none;
+    background-color: #eee;
+  }
+  
+  nav a{
+    text-align: left;
+    font-size: 120%;
+    padding: 5px 10px;
+  }
+  /* nav *:visited, a:link {
+  } */
+  
+  nav a.active {
+    color: #039be5;
+  }
+  
+  
+  
+  .section-heading{
+    text-align: center;
+    padding: 0px 10px;
+    font-weight: bold;
+    
+  }
+  
+  
+  .pwa{
+    padding: 5px;
+    font-size: 80%;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+  }
+  @media only screen and (min-width: 600px) {
+      /* For tablets: */
+  
+      nav a:hover {
+      color: #314947;
+      background-color: #CFD8DC;
+    }
+      
+  }

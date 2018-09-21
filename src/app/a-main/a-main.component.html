@@ -1,0 +1,69 @@
+<div class="row">
+
+  <div class="col-for-sides"></div>
+
+  <div class="col-for-page padding-responsive">
+
+    <div class="list-item-wrapper" *ngFor="let article of articlesList">
+      <mat-card class="task-card">
+        <mat-card-header>
+          <div mat-card-avatar>
+
+            <!-- <cl-image public-id="{{task.dpImgUrl}}">
+              <cl-transformation width="40" height="40" gravity="face" radius="100" crop="thumb">
+              </cl-transformation>
+
+
+
+            </cl-image> -->
+
+
+          </div>
+          <mat-card-title>{{}}<br>by <a routerLink="">{{}}</a></mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <markdown ngPreserveWhitespaces>{{task.description}}</markdown>
+            <div class="more-text" >
+              <a routerLink="">View details ></a>
+
+            </div>
+
+        </mat-card-content>
+      </mat-card>
+
+
+    </div>
+
+
+    <mat-paginator [length]="noOfAssignments"
+              [pageSize]="pageSize"
+              [pageSizeOptions]="pageSizeOptions"
+              >
+              <!-- (page)="pageEvent = $event" -->
+    </mat-paginator>
+
+
+
+
+
+  </div>
+
+  <app-sidebar class="col-for-sides  only-desktop"></app-sidebar>
+
+
+
+
+</div>
+
+
+ 
+  
+    <div *ngFor="let article of articlesList">
+      <!-- <pre>
+          {{article | json}}
+      </pre> -->
+
+
+      <markdown [data]="article.markdown_data"></markdown>
+      
+    </div>
