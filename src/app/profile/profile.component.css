@@ -1,0 +1,131 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.col-dp{
+    width: 100%;
+    float: left;
+    justify-content: center;
+  }
+  .dp{
+    width: 100px; height: 100px; border-radius: 50%; 
+  }
+  .col-info{
+    display: block;
+  }
+  
+  #title-options{
+    padding: 10px 0px;
+  
+  }
+  
+  
+  .title-option{
+    width: 50%;
+    text-align: center;
+    padding: 10px 24px; /* Some padding */
+    cursor: pointer; /* Pointer/hand icon */
+    float: left; /* Float the buttons side by side */
+  }
+  
+  
+  .profile-img{
+    height: 100px;
+    width: 100px;
+    border-radius:3px;
+  
+    z-index: -5;
+    /* box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 4px 4px 0 rgba(0, 0, 0, 0.2); */
+  }
+  
+  
+  
+  @media only screen and (min-width: 600px) {
+      /* For tablets: */
+  
+  }
+  @media only screen and (min-width: 1200px) {
+      /* For desktop: */
+      .col-dp{
+      width: 20%;
+    }
+  
+    .profile-img{
+      width:90%;
+        height:90%;
+      z-index: -5;
+    }
+  
+    .col-info{
+      width: 79%;
+    }
+  
+  
+  
+    .col-left{
+      width: 25%;
+      
+    }
+    .col-middle{
+      width: 50%;
+    }
+    .col-right{
+      width: 25%;
+    }
+    .content{
+      max-width: 1600px;
+      margin: auto;
+    }
+  
+  
+  
+  }
+  
+  .dp{
+    position: absolute;
+  }
+  
+  
+  .on-dp{
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .passthrough{
+    pointer-events:none;
+  }
+  
+  
+  
+  
+  .is-trying-doctor{
+  
+  }
+  
+  agm-map {
+    height: 300px;
+  }
+  
+  

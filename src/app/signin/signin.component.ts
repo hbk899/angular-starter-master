@@ -9,6 +9,7 @@ import { FormControl, Validators } from '@angular/forms';
 import { MatIconRegistry } from '@angular/material';
 import { MatSnackBar } from '@angular/material';
 import { NotifyService } from '../_services/notify.service';
+import { NgModule }      from '@angular/core';
 
 
 @Component({
@@ -86,7 +87,7 @@ export class SigninComponent implements OnInit {
       this.authService.emailSignUp(this.user, this.password)
         .then(() => {
   
-          this.router.navigate(['/dashboard']);
+          this.router.navigate(['/amain']);
   
           this.loading = false;
         })

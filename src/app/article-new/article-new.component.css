@@ -1,0 +1,19 @@
+/* @import '~dropzone/dist/min/dropzone.min.css'; */
+.form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form > * {
+    width: 100%;
+  }
+  
+  .textarea-description{
+    height: 100px;
+  }
+  
+  
+  .demo-chip-list {
+    width: 100%;
+  }
+  
