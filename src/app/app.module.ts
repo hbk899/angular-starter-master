@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 //import { ServiceWorkerModule } from '@angular/service-worker';
 
  
@@ -23,7 +23,7 @@ import { HeaderComponent } from './header/header.component';
 import { ArticleNewComponent } from './article-new/article-new.component';
 import { SigninComponent } from './signin/signin.component';
 import { ProfileComponent } from './profile/profile.component';
-
+//import { AuthGuard } from "./_services/auth.gaurd";
 
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule} from '@angular/forms';
@@ -34,6 +34,7 @@ import { AuthService } from './_services/auth.service';
 import { NotifyService } from './_services/notify.service';
 import 'hammerjs';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -46,6 +47,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
     ArticleNewComponent,
     SigninComponent,
     ProfileComponent,
+  
   ],
   imports: [
     AppRoutingModule,
@@ -54,6 +56,21 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     DemoMaterialModule,
+  RouterModule.forRoot([
+    // {
+    //     path : 'signin',
+    //     component: SigninComponent,
+    //     canActivate: [AuthGuard]
+
+    //   },
+    //   {
+    //     path:'articleNew',
+    //     component:ArticleNewComponent
+    //   }
+
+
+
+]),
 
 
     

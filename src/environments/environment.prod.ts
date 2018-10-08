@@ -1,11 +1,11 @@
 export const environment = {
   production: true,
   firebase: {
-    apiKey: "AIzaSyBNWDSZ9lYAv21eiKO7DmU64lwQdWmFOzM",
-    authDomain: "plantify-899.firebaseapp.com",
-    databaseURL: "https://plantify-899.firebaseio.com",
-    projectId: "plantify-899",
-    storageBucket: "plantify-899.appspot.com",
-    messagingSenderId: "724474040966"
+    apiKey: "AIzaSyA8RDm4uIO2FGC7B2NWoqR59i11hzUOh0w",
+    authDomain: "plantifyworld-3e501.firebaseapp.com",
+    databaseURL: "https://plantifyworld-3e501.firebaseio.com",
+    projectId: "plantifyworld-3e501",
+    storageBucket: "plantifyworld-3e501.appspot.com",
+    messagingSenderId: "1497821655"
   }
 };

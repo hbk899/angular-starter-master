@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MainService } from '../_services/main.service';
+import { AuthService } from '../_services/auth.service';
 
 @Component({
   selector: 'app-a-main',
@@ -24,8 +25,10 @@ export class AMainComponent implements OnInit {
   pageSize:any = 1;
   pageSizeOptions:any[] = [20];
   loading:any=true;
+  isLoggedIn = false;
 
-  constructor(public mainService:MainService) { }
+
+  constructor(public mainService:MainService,public authService:AuthService) { }
 
   ngOnInit() {
     this.mainService.getCollection("articles")
@@ -42,6 +45,17 @@ export class AMainComponent implements OnInit {
     .catch(err => {
         console.log(err);
     });
+
+
+    this.authService.getLoggedInUpdates().subscribe(user=> {
+        if(user==null || user==undefined){
+          this.isLoggedIn = false;
+        }
+        else {
+          this.isLoggedIn = true;
+        }
+    });
+
   }
 
 

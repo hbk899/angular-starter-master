@@ -17,9 +17,9 @@ import {ArticleNewComponent} from './article-new/article-new.component';
 const routes: Routes = [
 
   // { path: '', component: ArifMainComponent },
-  { path: 'amain', component: AMainComponent },
+  { path: 'home', component: AMainComponent },
   { path: 'about', component: AboutComponent },
-  { path :'' , component:HeaderComponent  },
+  { path :'' , component:AMainComponent  },
   {path:'signin',component:SigninComponent},
   {path:'articleNew',component:ArticleNewComponent},
   {path:'profile',component:ProfileComponent}

@@ -5,6 +5,11 @@
 
   <div class="col-for-page padding-responsive">
 
+    <div *ngIf="isLoggedIn">WELCOME</div>
+    
+    <div *ngIf="!isLoggedIn">PAIN DI SIRI TUADI</div>
+
+
     <div class="list-item-wrapper" *ngFor="let article of articlesList">
       <mat-card class="task-card">
         <mat-card-header>
