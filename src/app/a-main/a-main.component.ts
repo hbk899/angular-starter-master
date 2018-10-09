@@ -21,12 +21,12 @@ export class AMainComponent implements OnInit {
 
   ];
 
-  noOfAssignments:any = 1;
-  pageSize:any = 1;
+  noOfAssignments:any ;
+  pageSize:any ;
   pageSizeOptions:any[] = [20];
   loading:any=true;
   isLoggedIn = false;
-
+ 
 
   constructor(public mainService:MainService,public authService:AuthService) { }
 
@@ -36,7 +36,7 @@ export class AMainComponent implements OnInit {
       this.articlesList = list;
     //  console.log(this.articlesList);
       
-      return "tempor";
+      return "got documents from database";
     })
     .then(temp => {
         console.log(temp);

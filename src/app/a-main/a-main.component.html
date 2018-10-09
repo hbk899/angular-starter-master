@@ -1,13 +1,13 @@
 <app-header></app-header>
 <div class="row">
 
-  <div class="col-for-sides"></div>
+  <div class="col-for-sides" ></div>
 
   <div class="col-for-page padding-responsive">
 
     <div *ngIf="isLoggedIn">WELCOME</div>
     
-    <div *ngIf="!isLoggedIn">PAIN DI SIRI TUADI</div>
+    <div *ngIf="!isLoggedIn">not logged in</div>
 
 
     <div class="list-item-wrapper" *ngFor="let article of articlesList">
@@ -25,14 +25,11 @@
 
 
           </div>
-          <mat-card-title><markdown [data]="article.title"></markdown><br>by <markdown [data]="article.author"></markdown></mat-card-title>
+          <mat-card-title><h1><markdown [data]="article.title "></markdown></h1> by<markdown [data]="article.author"></markdown></mat-card-title>
         </mat-card-header>
         <mat-card-content>
-            <markdown ngPreserveWhitespaces>{{artcle.description}}</markdown>
-            <div class="more-text" >
-              <a routerLink="/task/{{task.id}}">View details ></a>
-
-            </div>
+            <markdown   [data]="article.description" ></markdown>
+          
 
         </mat-card-content>
       </mat-card>
@@ -64,12 +61,4 @@
 
  
   
-    <div *ngFor="let article of articlesList">
-      <!-- <pre>
-          {{article | json}}
-      </pre> -->
-
-
-      <markdown [data]="article.markdown_data"></markdown>
-      
-    </div>
+   

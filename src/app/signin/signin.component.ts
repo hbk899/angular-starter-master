@@ -64,7 +64,7 @@ export class SigninComponent implements OnInit {
           if (result) {
   
             this.loading = false;
-            this.router.navigate(['/home']);
+            this.router.navigate(['']);
           }
   
           this.loading = false;
@@ -87,7 +87,7 @@ export class SigninComponent implements OnInit {
       this.authService.emailSignUp(this.user, this.password)
         .then(() => {
   
-          this.router.navigate(['/home']);
+          this.router.navigate(['']);
   
           this.loading = false;
         })

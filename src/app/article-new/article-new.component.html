@@ -1,18 +1,22 @@
 
 
 <div class="row">
-
-  <div class="col-for-sides"></div>
+<div *ngIf="!isLoggedIn"> Please signin to write article <a routerLink="../signin" *ngIf="!isLoggedIn">Sign In</a></div>
+<div *ngIf="isLoggedIn">
+  <div class="col-for-sides" *ngIf="isLoggedIn"></div>
 
   <div class="col-for-page padding-responsive">
 
 
     <div class="form">
 
-        <h2>Post a task.</h2>
+        <h2>Post a article.</h2>
 
           <mat-form-field>
             <input matInput  [(ngModel)]="title"  placeholder="Title">
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput  [(ngModel)]="author"  placeholder="Author">
           </mat-form-field>
 
 
@@ -59,7 +63,7 @@
 
 
 
-          <mat-form-field class="form-element" appearance="outline">
+          <!-- <mat-form-field class="form-element" appearance="outline">
             <mat-label>External Attachment</mat-label>
             <input matInput [(ngModel)]="externalAttachment" type="text" placeholder="Paste link" >
             <mat-icon matSuffix>link</mat-icon>
@@ -69,7 +73,7 @@
 
             </mat-hint>
 
-          </mat-form-field>
+          </mat-form-field> -->
           <br>
 
             <div class="button-row">
@@ -96,4 +100,5 @@
 
 
 
+</div>
 </div>

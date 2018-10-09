@@ -11,6 +11,9 @@ import { Observable ,  Subject ,  of } from 'rxjs';
 import { MainService } from '../_services/main.service';
 import { Injectable } from '@angular/core';
 
+import { AuthService } from '../_services/auth.service';
+
+
 import { AngularFirestore } from 'angularfire2/firestore';
 
 @Component({
@@ -23,9 +26,9 @@ export class ArticleNewComponent implements OnInit {
 article_data : any;
 description:any;
 
-
-
-
+author:any;
+isLoggedIn:boolean
+loading:boolean;
 visible: boolean = true;
 selectable: boolean = true;
 removable: boolean = true;
@@ -56,7 +59,7 @@ allTags = [
 
 @ViewChild('tagInput') tagInput: ElementRef;
 
-constructor(public mainService:MainService,private db: AngularFirestore) {
+constructor(public mainService:MainService,private db: AngularFirestore,public authService:AuthService) {
 
 
  }
@@ -138,13 +141,25 @@ simplemdeoptions : any ={
 
   
 ngOnInit() {
+
+  
+  this.authService.getLoggedInUpdates().subscribe(user=> {
+    if(user==null || user==undefined){
+      this.isLoggedIn = false;
+    }
+    else {
+      this.isLoggedIn = true;
+    }
+});
 }
 
   
 posting(){
   var addDoc =this.db.collection('articles').add({
-    name: 'Tokyo',
-    country: 'Japan'
+    title: this.title,
+    description: this.description,
+    tags: this.tags,
+    author:this.author
   }).then(ref => {
     console.log('Added document with ID: ', ref.id);
     console.log(' the first tag is ',this.tags[0]);
