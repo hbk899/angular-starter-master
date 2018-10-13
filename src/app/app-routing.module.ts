@@ -17,7 +17,7 @@ import {ArticleNewComponent} from './article-new/article-new.component';
  export const routes: Routes = [
 
   // { path: '', component: ArifMainComponent },
-  { path :'' , component:AMainComponent ,pathMatch: 'full'  },
+  { path :'' , component:AMainComponent   },
   { path: 'about', component: AboutComponent  },
 
   {path:'signin',component:SigninComponent },

@@ -10,11 +10,13 @@ import {MatAutocompleteSelectedEvent, MatChipInputEvent} from '@angular/material
 import { Observable ,  Subject ,  of } from 'rxjs';
 import { MainService } from '../_services/main.service';
 import { Injectable } from '@angular/core';
-
+import { Router } from '@angular/router';
 import { AuthService } from '../_services/auth.service';
-
+import { ActivatedRoute } from '@angular/router';
+import {ProfileService}from '../_services/profile.service'
 
 import { AngularFirestore } from 'angularfire2/firestore';
+import PlantifyUser from '../schema/user';
 
 @Component({
   selector: 'app-article-new',
@@ -22,11 +24,16 @@ import { AngularFirestore } from 'angularfire2/firestore';
   styleUrls: ['./article-new.component.css']
 })
 export class ArticleNewComponent implements OnInit {
-  title :any;
-article_data : any;
-description:any;
+  title ="";
+article_data ="";
+description="";
+userId: string;
+  me: boolean;
 
-author:any;
+
+
+user = new PlantifyUser;
+author="";
 isLoggedIn:boolean
 loading:boolean;
 visible: boolean = true;
@@ -39,6 +46,7 @@ separatorKeysCodes = [ENTER, COMMA];
 tagCtrl = new FormControl();
 
 filteredTags: Observable<any[]>;
+
 
 tags = [
 ];
@@ -59,7 +67,13 @@ allTags = [
 
 @ViewChild('tagInput') tagInput: ElementRef;
 
-constructor(public mainService:MainService,private db: AngularFirestore,public authService:AuthService) {
+constructor(public mainService:MainService,
+  private db: AngularFirestore,
+  public authService:AuthService,
+  private router: Router,
+  private route: ActivatedRoute,
+  private profileService: ProfileService,
+  ) {
 
 
  }
@@ -151,7 +165,54 @@ ngOnInit() {
       this.isLoggedIn = true;
     }
 });
+this.userId = this.route.snapshot.paramMap.get('id');
+
+
+
+this.authService.getCurrentUserUpdates().subscribe((user) => {
+
+  if (!user) {
+    return;
+  }
+  if (user.id === this.userId || !this.userId) {
+    this.me = true;
+    
+  } else {
+    this.getUser();
+    this.me = false;
+  }
+
+  this.user = user;
+  
+
+
+});
+
+
+
+
+
 }
+
+
+getUser() {
+this.loading = true;
+this.profileService.getById(this.userId)
+  .then(user => {
+    this.user = <PlantifyUser>user;
+  //  console.log(user);
+
+    this.loading = false;
+  })
+  .catch(err => {
+    this.loading = false;
+  });
+}
+
+
+
+
+
 
   
 posting(){
@@ -159,11 +220,16 @@ posting(){
     title: this.title,
     description: this.description,
     tags: this.tags,
-    author:this.author
+    author:this.user.displayName,
+    authorId:this.userId
+
   }).then(ref => {
     console.log('Added document with ID: ', ref.id);
     console.log(' the first tag is ',this.tags[0]);
-  });
+    this.router.navigateByUrl('/');
+      
+});
+  
 }
 }
 

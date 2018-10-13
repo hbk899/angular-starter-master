@@ -1,3 +1,131 @@
-<p>
-  profile works!
-</p>
+
+<div class="content">
+
+
+  <div class="row">
+
+
+
+      <div class="col-right">
+
+
+      </div>
+      <div class="col-middle">
+
+          <div class="row">
+
+
+
+              <div class="col-25p padding-responsive">
+                  <div class="centered-horizontal">
+                      <div>
+
+                          <img src="{{user?.dpSrc ? user.dpSrc : defaultDp}}" class="dp " />
+
+                          <div class="on-dp " style="height: 100px; width: 100%;">
+                              <mat-progress-spinner [value]="progressValue" *ngIf="dpUpload" mode="indeterminate" diameter="100" strokeWidth="5"></mat-progress-spinner>
+                          </div>
+
+
+                          <br>
+                          <div *ngIf="me">
+                              <input id="file" type="file" (change)="fileChangeEventDp($event)" accept=".png,.jpg" class=" inputfile inputfile-3" />
+                              <label for="file">Change photo</label>
+
+                          </div>
+
+
+                      </div>
+
+                  </div>
+
+              </div>
+
+
+              <div class="col-75p padding-global">
+                  <h3>{{user.displayName}}</h3>
+
+              </div>
+
+
+          </div>
+
+          <mat-spinner class="centered-horizontal" diameter="30" *ngIf="loading"></mat-spinner>
+
+          <div *ngIf="dpChangedEvent">
+
+
+              <image-cropper [imageChangedEvent]="dpChangedEvent" [maintainAspectRatio]="true" [aspectRatio]="1 / 1" [resizeToWidth]="128"
+                  format="png" (imageCropped)="imageCropped($event)" (imageLoaded)="imageLoaded()" (loadImageFailed)="loadImageFailed()"
+                  style="height: 300px; width: 100%; background: #ddd;"></image-cropper>
+              <div class="centered-horizontal">
+                  <button mat-raised-button color="accent" (click)="uploadDp()" class="centered-horizontal">Upload</button>
+              </div>
+
+
+
+
+          </div>
+
+
+          <div *ngIf="!me && !loading">
+              
+
+          </div>
+
+
+          <div *ngIf="me">
+              <div class="row">
+                  <mat-form-field appearance="outline" class="col-3 padding-global">
+                      <mat-label>Name</mat-label>
+                      <input matInput [(ngModel)]="user.displayName" placeholder="Name">
+                      <!-- <mat-hint>Search</mat-hint> -->
+                  </mat-form-field>
+
+
+
+                  <mat-form-field appearance="outline" class="col-3 padding-global">
+                      <mat-label>Email</mat-label>
+                      <input matInput [(ngModel)]="user.email" placeholder="Email">
+                      <!-- <mat-hint>Search</mat-hint> -->
+                  </mat-form-field>
+
+
+
+
+
+
+
+              </div>
+
+
+              <!-- <mat-card style="margin:10px 0px; padding: 10px;"> -->
+        
+
+
+              <div class="button-row">
+                <button mat-raised-button (click)="saveProfileData()" color="accent" *ngIf="!loading && !error">Save</button>
+                <mat-spinner class="centered-horizontal" diameter="30" *ngIf="loading"></mat-spinner>
+            </div>
+
+
+
+
+          </div>
+
+          <!-- </mat-card> -->
+      </div>
+      <div class="col-left">
+
+
+
+      </div>
+
+
+
+
+
+  </div>
+
+
+</div>

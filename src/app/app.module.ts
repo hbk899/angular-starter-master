@@ -35,6 +35,9 @@ import { NotifyService } from './_services/notify.service';
 import 'hammerjs';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { RouterModule } from '@angular/router';
+import { QRCodeModule } from 'angularx-qrcode';
+import { ImageCropperModule } from 'ngx-image-cropper';
+import { AgmCoreModule } from '@agm/core';
 
 
 @NgModule({
@@ -56,6 +59,7 @@ import { RouterModule } from '@angular/router';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     DemoMaterialModule,
+    ImageCropperModule,
   RouterModule.forRoot([
     // {
     //     path : 'signin',
@@ -67,7 +71,7 @@ import { RouterModule } from '@angular/router';
     //     path:'articleNew',
     //     component:ArticleNewComponent
     //   }
-
+ 
 
 
 ]),
@@ -87,8 +91,10 @@ import { RouterModule } from '@angular/router';
     AngularFirestoreModule.enablePersistence(), // imports firebase/firestore, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
     AngularFireStorageModule, // imports firebase/storage only needed for storage features
-
-
+    QRCodeModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyAfJTW8goiBeq62CEHFcI4l3rG57rKCc7E'
+    }),
 
   ],
   providers: [MainService,AuthService,NotifyService,AngularFireAuthModule,AngularFirestore],

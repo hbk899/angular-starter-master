@@ -181,7 +181,7 @@ export class AuthService {
   }
 
 
-  updateDoctorData(user: PlantifyUser) {
+  updateProfile(user: PlantifyUser) {
     const a: any = {};
     
     return this.afs.doc(`users/${this.afAuth.auth.currentUser.uid}`).ref.update(JSON.parse(JSON.stringify(a)));

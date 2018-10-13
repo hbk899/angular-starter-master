@@ -57,11 +57,12 @@ export class ProfileComponent implements OnInit {
   logoChangedEvent: any = '';
   croppedImage: any = '';
 
-  defaultDp = '/assets/forapp/dp-placeholder.png';
+  defaultDp = '/assets/dp-placeholder.png';
+
   separatorKeysCodes = [ENTER, COMMA, SPACE];
 
   loading = false;
-
+  
 
   eduTags: string[] = [];
 
@@ -136,6 +137,7 @@ export class ProfileComponent implements OnInit {
       }
       if (user.id === this.userId || !this.userId) {
         this.me = true;
+        
       } else {
         this.getUser();
         this.me = false;
@@ -159,7 +161,7 @@ export class ProfileComponent implements OnInit {
     this.profileService.getById(this.userId)
       .then(user => {
         this.user = <PlantifyUser>user;
-        console.log(user);
+      //  console.log(user);
 
         this.loading = false;
       })
@@ -322,6 +324,18 @@ export class ProfileComponent implements OnInit {
 
 
 
+  saveProfileData() {
+    this.loading = true;
+   
+    this.authService.updateProfile(this.user)
+      .then(result => {
+        this.loading = false;
+      })
+      .catch(err => {
+        this.loading = false;
+      });
+
+  }
 
 
 
