@@ -221,11 +221,12 @@ posting(){
     description: this.description,
     tags: this.tags,
     author:this.user.displayName,
-    authorId:this.userId
+    authorId:this.user.id
 
   }).then(ref => {
     console.log('Added document with ID: ', ref.id);
     console.log(' the first tag is ',this.tags[0]);
+    console.log('the id of author is',this.user.id);
     this.router.navigateByUrl('/');
       
 });
