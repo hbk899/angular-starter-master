@@ -39,7 +39,29 @@ export class MainService {
     }
 
 
+getUserCollection(collection: string,userId :string): Promise<any[]> {
 
+    return new Promise<any>((resolve, reject) => {
+        this.db.collection(collection).ref.where('authorId', '==', userId).get()
+
+            .then((snapshot) => {
+                if (!snapshot.empty) {
+                    const result: any[] = [];
+                    snapshot.docs.forEach(doc => {
+                        result.push(doc.data());
+                    });
+
+                    resolve(result);
+                } else {
+                    reject('could not find');
+                }
+            })
+            .catch(err => {
+                reject(err);
+            });
+    });
+
+}
 
 
     getCollection(collection: string): Promise<any[]> {

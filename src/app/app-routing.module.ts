@@ -14,6 +14,7 @@ import {HeaderComponent } from './header/header.component';
 import {SigninComponent} from './signin/signin.component';
 import {ProfileComponent} from './profile/profile.component';
 import {ArticleNewComponent} from './article-new/article-new.component';
+import {ArticlesMyComponent} from './articles-my/articles-my.component';
  export const routes: Routes = [
 
   // { path: '', component: ArifMainComponent },
@@ -22,7 +23,8 @@ import {ArticleNewComponent} from './article-new/article-new.component';
 
   {path:'signin',component:SigninComponent },
   {path:'articleNew',component:ArticleNewComponent},
-  {path:'profile',component:ProfileComponent}
+  {path:'profile',component:ProfileComponent},
+  {path:'myarticles', component:ArticlesMyComponent}
 ];
 
 @NgModule({

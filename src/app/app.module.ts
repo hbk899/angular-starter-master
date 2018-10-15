@@ -38,6 +38,7 @@ import { RouterModule } from '@angular/router';
 import { QRCodeModule } from 'angularx-qrcode';
 import { ImageCropperModule } from 'ngx-image-cropper';
 import { AgmCoreModule } from '@agm/core';
+import { ArticlesMyComponent } from './articles-my/articles-my.component';
 
 
 @NgModule({
@@ -50,6 +51,7 @@ import { AgmCoreModule } from '@agm/core';
     ArticleNewComponent,
     SigninComponent,
     ProfileComponent,
+    ArticlesMyComponent,
   
   ],
   imports: [

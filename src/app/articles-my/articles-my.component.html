@@ -1,0 +1,64 @@
+<app-header></app-header>
+<div class="row">
+
+  <div class="col-for-sides" ></div>
+
+  <div class="col-for-page padding-responsive">
+
+    <div *ngIf="isLoggedIn">WELCOME</div>
+    
+    <div *ngIf="!isLoggedIn">not logged in</div>
+
+
+    <div class="list-item-wrapper" *ngFor="let article of articlesList">
+      <mat-card class="task-card">
+        <mat-card-header>
+          <div mat-card-avatar>
+
+            <!-- <cl-image public-id="{{task.dpImgUrl}}">
+              <cl-transformation width="40" height="40" gravity="face" radius="100" crop="thumb">
+              </cl-transformation>
+
+
+
+            </cl-image> -->
+
+
+          </div>
+          <mat-card-title><h1><markdown [data]="article.title "></markdown></h1> by<markdown [data]="article.author"></markdown></mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <markdown   [data]="article.description" ></markdown>
+          
+
+        </mat-card-content>
+      </mat-card>
+
+
+    </div>
+
+
+    <mat-paginator [length]="noOfAssignments"
+              [pageSize]="pageSize"
+              [pageSizeOptions]="pageSizeOptions"
+              >
+              <!-- (page)="pageEvent = $event" -->
+    </mat-paginator>
+
+
+
+
+
+  </div>
+
+ 
+
+
+
+
+</div>
+
+
+ 
+  
+   
