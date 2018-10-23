@@ -11,7 +11,7 @@ import { MarkdownModule } from 'ngx-markdown';
 import { map, startWith, catchError } from 'rxjs/operators';
 
 
-
+import { dataURItoBlob } from '../_util/filesUtil';
 import { UserService } from '../_services/user.service';
 
 
@@ -371,12 +371,6 @@ export class ProfileComponent implements OnInit {
     return blob;
 
   }
-
-
-
-
-
-
 
 
 }
