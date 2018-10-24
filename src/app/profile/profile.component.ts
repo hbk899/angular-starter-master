@@ -330,8 +330,10 @@ export class ProfileComponent implements OnInit {
     this.authService.updateProfile(this.user)
       .then(result => {
         this.loading = false;
+        console.log(" updating data")
       })
       .catch(err => {
+        console.log("error updating data")
         this.loading = false;
       });
 

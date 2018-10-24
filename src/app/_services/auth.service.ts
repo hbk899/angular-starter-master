@@ -183,7 +183,9 @@ export class AuthService {
 
   updateProfile(user: PlantifyUser) {
     const a: any = {};
-    
+    a.displayName = user.displayName;
+    a.email=user.email;
+    console.log("in auth update method");
     return this.afs.doc(`users/${this.afAuth.auth.currentUser.uid}`).ref.update(JSON.parse(JSON.stringify(a)));
   }
 
@@ -207,9 +209,12 @@ export class AuthService {
     const ref = this.afStorage.ref(`userdps/${this.plantifyUser.id}`);
     return ref.put(upload.file)
       .then(snapshot => {
+        console.log("dpupload method then 1");
         return snapshot.ref.getDownloadURL();
+     
       })
       .then(downloadUrl => {
+        console.log("dpupload method then 2");
         return this.saveDpSrc(downloadUrl);
       });
 
