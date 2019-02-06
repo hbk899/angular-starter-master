@@ -140,7 +140,7 @@ export class AuthService {
         return credentials;
       })
       .then(user => {
-        this.notify.update('Welcome to RxKeep!!!', 'success');
+        this.notify.update('Welcome to plantify!!!', 'success');
         return user;
       });
   }

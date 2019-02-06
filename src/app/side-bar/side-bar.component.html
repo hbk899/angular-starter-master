@@ -6,38 +6,17 @@
 
   <nav class="menu">
 
-
-
-          <a mat-button  >
-                  <i class="fas fa-plus-circle"></i> &nbsp;&nbsp;New</a>
-
-          <a mat-button routerLink="Dashboard" >
-                  <i class="fas fa-th"></i> &nbsp;&nbsp;Dashboard</a>
-
-          
-
+          <a mat-button routerLink="/articleNew" (click)="snav.toggle()"> <i class="fas fa-edit"></i>&nbsp;&nbsp;Write Article</a>
           <p class="section-heading" >Personal</p>
-
-
-
-          <a mat-button  >
-                  <i class="fas fa-file-prescription"></i> &nbsp; Prescriptions</a>
-          <a mat-button  >
-                  <i class="far fa-user"></i> &nbsp;&nbsp; Profile</a>
-
+           <a mat-button  routerLink="/profile" *ngIf="isLoggedIn" (click)="snav.toggle()"><i class="fas fa-user "></i>&nbsp;&nbsp; Profile</a>
           <p class="section-heading" >Other</p>
-
-
-          
-
-          <!-- <a  mat-button *ngIf="loggedIn" (click)="logout()">Logout</a> -->
-
+          <a mat-button routerLink="/" (click)="logout()"> <i class="fas fa-edit"></i>&nbsp;&nbsp;Logout</a>
   </nav>
 
 
 
-  <p class="pwa">This app is Progressive Web App which means it can run offline and you can add it to homescreen.</p>
-
+ <!--<p class="pwa">This app is Progressive Web App which means it can run offline and you can add it to homescreen.</p> {% endcomment %}
+--> 
 
 
 

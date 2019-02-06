@@ -51,7 +51,7 @@ export class ProfileComponent implements OnInit {
   //isTryingToDoctor = false;
   dpUpload: Upload;
   logoUpload: Upload;
-
+  usersr: string;
 
   dpChangedEvent: any = '';
   logoChangedEvent: any = '';

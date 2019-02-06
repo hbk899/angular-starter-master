@@ -10,6 +10,9 @@ import { AuthService } from '../_services/auth.service';
 export class HeaderComponent implements OnInit {
 
   isLoggedIn=false;
+  isMobile: boolean;
+  sideNavOpened: boolean;
+  sideNavMode: string;
 
   constructor(public mainService:MainService,public authService:AuthService) { }
   
@@ -27,4 +30,29 @@ export class HeaderComponent implements OnInit {
   logout() {
     this.authService.logOut();
   }
+
+refresh() {
+
+  const w = window,
+    d = document,
+    e = d.documentElement,
+    g = d.getElementsByTagName('body')[0],
+    x = w.innerWidth || e.clientWidth || g.clientWidth,
+    y = w.innerHeight || e.clientHeight || g.clientHeight;
+
+
+  console.log(x);
+
+  if (x > 600) {
+
+    this.isMobile = false;
+    this.sideNavOpened = false;
+    this.sideNavMode = 'over';
+  } else {
+    this.sideNavMode = 'over';
+    this.sideNavOpened = false;
+    this.isMobile = true;
+  }
+}
+
 }

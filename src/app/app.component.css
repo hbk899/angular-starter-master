@@ -16,3 +16,19 @@ example-container {
 .basic-container {
   padding: 30px;
 }
+ .toolbar{
+   overflow: hidden;
+   padding: 20px 10px;
+   text-decoration: none
+ }
+ .toolbar a{
+  padding: 12px;
+  text-decoration: none;
+ }
+ .toolbar a.active {
+  background-color: dodgerblue;
+  color: white;
+}
+#snav{
+  overflow: hidden;
+}
