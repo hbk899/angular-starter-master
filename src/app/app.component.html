@@ -11,21 +11,22 @@
   
     <span class="header-padding"></span>
     <a  *ngIf="isMobile"  (click)="snav.toggle()"><mat-icon>menu</mat-icon></a>
-    <a routerLink="/" >Home</a>
-    <a  routerLink="/signin" *ngIf="!loggedIn">Sign In</a>
+    <a routerLink="/">Home</a>
+    <!--<a  routerLink="/signin" *ngIf="!loggedIn">Sign In</a>-->
     
     
     <a   *ngIf="loggedIn&&!isMobile"   routerLink="/myarticles">My Publications</a>
     <a     routerLink="/about"  >About</a>
     <span style="flex: 1 0 auto;"></span>
-    <a routerLink="/profile" *ngIf="loggedIn"><i class="fas fa-user "></i>{{ " "+username}} </a>
-    <a class="only-desktop"  mat-button routerLink="/login" *ngIf="notloggedIn&&!isMobile">Sign In</a>
-    <a routerLink="/prescribe" [matMenuTriggerFor]="menu"  *ngIf="loggedIn&&!isMobile"><i class="fas fa-cog"></i></a>
+   <a routerLink="/profile" *ngIf="loggedIn"><i class="fas fa-user "></i>{{ " "+username}} </a>
+   
+    <a [matMenuTriggerFor]="menu"  ><i class="fas fa-cog"></i></a>
 <mat-menu #menu="matMenu"  yPosition="below" [overlapTrigger]="false">
   
-  <button  mat-menu-item *ngIf="loggedIn&&!isMobile"  (click)="logout()"  >Logout</button>
+  <button  mat-menu-item *ngIf="loggedIn"  (click)="logout()"  >Logout</button>
+   <button  mat-menu-item   routerLink="/signin" *ngIf="notloggedIn" >Sign In</button>
 </mat-menu>
-    <a   mat-icon-button  routerLink="/signin" *ngIf="notloggedIn&&!isMobile" ><i class="far fa-user"></i></a>
+   
 
     <span class="header-padding"></span>
 </mat-toolbar>
